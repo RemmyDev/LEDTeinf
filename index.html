@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RGB Viewer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="color-display">
+    <h1 id="rgb-values">R: 0, G: 0, B: 0</h1>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+
+    socket.on('rgb', (data) => {
+      const { r, g, b } = data;
+      document.getElementById('color-display').style.backgroundColor = `rgb(${r},${g},${b})`;
+      document.getElementById('rgb-values').textContent = `R: ${r}, G: ${g}, B: ${b}`;
+    });
+  </script>
+</body>
+</html>

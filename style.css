@@ -1,0 +1,20 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: sans-serif;
+}
+
+#color-display {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.5s ease;
+}
+
+#rgb-values {
+  color: white;
+  font-size: 2em;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
